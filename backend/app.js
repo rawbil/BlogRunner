@@ -9,7 +9,7 @@ const blogsRoute = require('./routes/blogsRoute');
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODBURI)
 .then(() => console.log(`Database Connnected: ${mongoose.connection.host}`))
-.catch(error => console.log(error.message));
+.catch(error => console.log(error));
 
 //END OF IMPORTS
 
