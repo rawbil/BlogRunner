@@ -14,7 +14,7 @@ mongoose.connect(process.env.MONGODBURI)
 //END OF IMPORTS
 
 const corsOptions = {
-    origin: ["http://localhost:3000"],
+    origin: ["http://localhost:3000", "https://blog-runner-frontend.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
     allowedHeaders: ["Content-Type", "token"],
@@ -35,7 +35,7 @@ app.use('/', (req, res) => {
 
 //error page
 app.use((req, res) => {
-    res.send("404 error... Not Found");
+    res.status(404).send("404 error... Not Found");
 })
 
 app.listen(PORT, () => {
