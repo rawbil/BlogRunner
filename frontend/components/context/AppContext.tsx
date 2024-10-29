@@ -9,7 +9,7 @@ type ContextTypes = {
 export const AppContext = createContext<ContextTypes | undefined>(undefined);
 
 export default function ProviderFunction(props: { children: React.ReactNode }) {
-  const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+  const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL || "https://blog-runner-backend.vercel.app";
   const [token, setToken] = useState<string | null | undefined>(null);
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
