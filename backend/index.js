@@ -17,7 +17,7 @@ const corsOptions = {
     origin: ["https://blog-runner-frontend.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
-    allowedHeaders: ["Content-Type", "token"],
+    allowedHeaders: ["Content-Type", "Authorization", "token"],
     optionsSuccessStatus: 200,
 };
 
