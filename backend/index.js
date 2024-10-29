@@ -13,6 +13,8 @@ mongoose.connect(process.env.MONGODBURI)
 
 //END OF IMPORTS
 
+const corsOptions
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
