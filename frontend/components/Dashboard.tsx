@@ -3,6 +3,7 @@ import { useProviderFunction } from "./context/AppContext";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useParams, useRouter } from "next/navigation";
+import Link from "next/link";
 
 type blogTypes = {
   _id: string;
@@ -102,7 +103,7 @@ export default function Dashboard() {
           <ul className="flex flex-col justify-center">
             {blogList.map((blog: blogTypes) => (
               <li key={blog._id} className="bg-gray-300 p-2 rounded-md mb-5">
-                <div className="border-b border-gray-400 mb-2 flex justify-between items-center">
+                <Link href={`blog/${blog._id}`} className="border-b border-gray-400 mb-2 flex justify-between items-center">
                   <h1 className="text-xl">{blog.title}</h1>
                   <div className="flex gap-2 p-2">
                     <button
@@ -118,7 +119,7 @@ export default function Dashboard() {
                       Delete
                     </button>
                   </div>
-                </div>
+                </Link>
 
                 <div className="flex text-xs justify-between text-gray-500">
                   <p>CreatedAt: {new Date(blog.createdAt).toLocaleString()}</p>
